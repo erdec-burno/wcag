@@ -1,7 +1,16 @@
 @import "tailwindcss";
+@import "@fontsource-variable/geist";
+@import "@fontsource-variable/geist-mono";
+@import "@fontsource-variable/ibm-plex-sans";
 @import "./tokens.css";
 @import "./themes.css";
 @theme inline {
+  --font-sans: var(--app-font-body);
+  --font-heading: var(--app-font-heading);
+  --font-input: var(--app-font-input);
+  --font-table-label: var(--app-font-table-label);
+  --font-link: var(--app-font-link);
+  --font-mono: var(--app-font-input);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
@@ -21,7 +30,7 @@
 }
 body {
   margin: 0;
-  font-family: var(--font-sans);
+  font-family: var(--app-font-body);
   font-size: var(--font-size-body);
   line-height: var(--line-height-body);
   color: var(--foreground);
@@ -33,7 +42,12 @@ p {
   margin: 0;
 }
 h1,
-h2 {
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--app-font-heading);
   font-weight: var(--font-weight-bold);
   line-height: var(--line-height-heading);
   letter-spacing: var(--letter-spacing-heading);
@@ -46,12 +60,24 @@ h2 {
   font-size: var(--font-size-heading);
 }
 a {
+  font-family: var(--app-font-link);
   color: var(--primary);
   text-underline-offset: var(--space-1);
 }
 button,
-input {
+input,
+textarea,
+select {
   font: inherit;
+}
+input,
+textarea,
+select {
+  font-family: var(--app-font-input);
+}
+/* Column and row labels; cell values keep the body font. */
+th {
+  font-family: var(--app-font-table-label);
 }
 :focus-visible {
   outline: var(--focus-width) solid var(--ring);

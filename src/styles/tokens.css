@@ -1,6 +1,10 @@
 /* Base scales: edit these to change the visual system. */
 :root {
-  --font-sans: "Segoe UI", system-ui, sans-serif;
+  --font-system: "Segoe UI", system-ui, sans-serif;
+  /* Font families: local variable fonts with system fallbacks. */
+  --font-geist: "Geist Variable", var(--font-system);
+  --font-geist-mono: "Geist Mono Variable", ui-monospace, monospace;
+  --font-ibm-plex-sans: "IBM Plex Sans Variable", var(--font-system);
   --font-size-caption: 0.8125rem;
   --font-size-small: 0.875rem;
   --font-size-body: 1rem;

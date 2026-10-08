@@ -1,6 +1,12 @@
 /* Semantic tokens. Both components and Tailwind use the same values. */
 :root {
   color-scheme: light;
+  /* Typography roles shared by both themes. */
+  --app-font-body: var(--font-system);
+  --app-font-heading: var(--font-geist);
+  --app-font-input: var(--font-geist-mono);
+  --app-font-table-label: var(--font-geist-mono);
+  --app-font-link: var(--font-ibm-plex-sans);
   --app-color-background: var(--palette-paper);
   --app-color-surface: var(--palette-white);
   --app-color-surface-subtle: #eef2e9;
