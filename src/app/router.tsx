@@ -14,6 +14,18 @@ import { ForgotPasswordPage } from "@/pages/forgot-password/ForgotPasswordPage";
 import { ResetPasswordPage } from "@/pages/reset-password/ResetPasswordPage";
 import { DashboardPage } from "@/pages/dashboard/DashboardPage";
 import { NotFoundPage } from "@/pages/not-found/NotFoundPage";
+import { useTheme } from "./providers";
+import { ThemeToggle } from "@/shared/components/ThemeToggle";
+function FloatingThemeControl() {
+  const { pathname } = useLocation();
+  const { dark, toggle } = useTheme();
+  if (pathname === "/admin" || pathname.startsWith("/admin/")) return null;
+  return (
+    <div className="theme-control">
+      <ThemeToggle dark={dark} onToggle={toggle} />
+    </div>
+  );
+}
 function RouteFocus() {
   const { pathname } = useLocation();
   useEffect(() => {
@@ -38,9 +50,11 @@ function RouteFocus() {
   return null;
 }
 export function Router() {
+  const { dark, toggle } = useTheme();
   return (
     <BrowserRouter>
       <RouteFocus />
+      <FloatingThemeControl />
       <Routes>
         <Route path="/" element={<Navigate to="/login" replace />} />
         <Route element={<AuthLayout />}>
@@ -49,7 +63,14 @@ export function Router() {
           <Route path="/reset-password" element={<ResetPasswordPage />} />
         </Route>
         <Route element={<RequireAuth />}>
-          <Route path="/admin" element={<AdminLayout />}>
+          <Route
+            path="/admin"
+            element={
+              <AdminLayout
+                themeControl={<ThemeToggle dark={dark} onToggle={toggle} />}
+              />
+            }
+          >
             <Route index element={<Navigate to="dashboard" replace />} />
             <Route path="dashboard" element={<DashboardPage />} />
             <Route path="*" element={<NotFoundPage />} />
