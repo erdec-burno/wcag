@@ -11,11 +11,28 @@ npm ci
 npm run dev
 npm run build
 npm test
+```
+
+## E2E-тесты: обязательный Chromium
+
+Для успешного запуска e2e-тестов нужен браузер Chromium. `npm ci` устанавливает пакет Playwright, но не устанавливает сам браузер. Перед первым запуском тестов и после обновления Playwright установите совместимую версию Chromium:
+
+```sh
 npx playwright install chromium
 npm run test:e2e
-# В облачном окружении можно использовать установленный браузер:
+```
+
+В Linux/CI, если отсутствуют системные библиотеки браузера, используйте `npx playwright install --with-deps chromium`. Установка системных зависимостей может потребовать права администратора.
+
+В облачном окружении уже установлен системный Chromium (`/usr/bin/chromium`). Его можно использовать без скачивания браузера Playwright:
+
+```sh
 PLAYWRIGHT_CHROMIUM_EXECUTABLE=/usr/bin/chromium npm run test:e2e
 ```
+
+Переменная `PLAYWRIGHT_CHROMIUM_EXECUTABLE` задаёт путь к существующему исполняемому файлу браузера; сама она ничего не устанавливает. Для воспроизводимых запусков на других машинах предпочтительна версия Chromium, установленная Playwright.
+
+Ошибка `browserType.launch: Executable doesn't exist` означает, что Playwright не нашёл браузер. Установите Chromium командой выше или укажите путь к установленному системному браузеру. При этой ошибке пользовательские сценарии ещё не выполняются.
 
 Демо: `admin@example.com` / `Demo12345!`. После входа открывается `/admin/dashboard`. Все ответы проходят через фейковый Axios-адаптер в `src/api/fake`.
 
