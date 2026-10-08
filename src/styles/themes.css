@@ -1,0 +1,56 @@
+/* Semantic tokens. Both components and Tailwind use the same values. */
+:root {
+  color-scheme: light;
+  --app-color-background: var(--palette-paper);
+  --app-color-surface: var(--palette-white);
+  --app-color-surface-subtle: #eef2e9;
+  --app-color-text-primary: var(--palette-ink);
+  --app-color-text-secondary: var(--palette-slate);
+  --app-color-border: #7a8981;
+  --app-color-accent: var(--palette-green);
+  --app-color-accent-hover: #194b32;
+  --app-color-on-accent: var(--palette-white);
+  --app-color-error: var(--palette-red);
+  --app-color-warning: var(--palette-amber);
+  --app-color-success: #23613e;
+  --app-color-focus-ring: #1858c9;
+  --app-color-story-background: #183e30;
+  --app-color-story-text: #f5f8ef;
+  --app-color-story-muted: #c5d6ca;
+  --app-color-story-accent: var(--palette-lime);
+  --background: var(--app-color-background);
+  --foreground: var(--app-color-text-primary);
+  --card: var(--app-color-surface);
+  --card-foreground: var(--foreground);
+  --popover: var(--card);
+  --popover-foreground: var(--foreground);
+  --primary: var(--app-color-accent);
+  --primary-foreground: var(--app-color-on-accent);
+  --secondary: var(--app-color-surface-subtle);
+  --secondary-foreground: var(--foreground);
+  --muted: var(--secondary);
+  --muted-foreground: var(--app-color-text-secondary);
+  --accent: var(--secondary);
+  --accent-foreground: var(--foreground);
+  --destructive: var(--app-color-error);
+  --border: var(--app-color-border);
+  --input: var(--border);
+  --ring: var(--app-color-focus-ring);
+  --radius: var(--radius-medium);
+}
+.dark {
+  color-scheme: dark;
+  --app-color-background: #111c17;
+  --app-color-surface: #192a21;
+  --app-color-surface-subtle: #24382d;
+  --app-color-text-primary: #eef5ed;
+  --app-color-text-secondary: #bacabb;
+  --app-color-border: #829589;
+  --app-color-accent: #c2e591;
+  --app-color-accent-hover: #daf4b6;
+  --app-color-on-accent: #172a24;
+  --app-color-error: #ffaaa2;
+  --app-color-warning: #f3d18b;
+  --app-color-success: #a5dba9;
+  --app-color-focus-ring: #94bfff;
+}
