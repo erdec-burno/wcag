@@ -38,6 +38,12 @@
   --content-width: 70rem;
   --form-width: 26rem;
   --sidebar-width: 16rem;
+  /* Topbar reference geometry: 80px height, 32px icon frames, 2px corners. */
+  --topbar-height: 5rem;
+  --topbar-icon-size: 2rem;
+  --topbar-icon-radius: 0.125rem;
+  --palette-topbar-paper: #f2f0ec;
+  --palette-topbar-blue: #234756;
   --shadow-card: 0 12px 40px rgb(0 0 0 / 0.04);
   --duration-fast: 150ms;
   --ease-standard: ease-out;

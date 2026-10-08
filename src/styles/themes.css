@@ -7,6 +7,12 @@
   --app-font-input: var(--font-geist-mono);
   --app-font-table-label: var(--font-geist-mono);
   --app-font-link: var(--font-ibm-plex-sans);
+  /* Topbar surface and actions from the supplied SVG. */
+  --app-color-topbar-surface: var(--palette-topbar-paper);
+  --app-color-topbar-action: var(--palette-topbar-blue);
+  /* Modal scrim for account dialogs and the mobile navigation drawer. */
+  --app-color-modal-backdrop: rgb(0 0 0 / 0.45);
+  --app-font-topbar-action: var(--font-geist-mono);
   --app-color-background: var(--palette-paper);
   --app-color-surface: var(--palette-white);
   --app-color-surface-subtle: #eef2e9;
@@ -45,6 +51,8 @@
   --radius: var(--radius-medium);
 }
 .dark {
+  --app-color-topbar-surface: var(--app-color-surface);
+  --app-color-topbar-action: var(--app-color-text-primary);
   color-scheme: dark;
   --app-color-background: #111c17;
   --app-color-surface: #192a21;
